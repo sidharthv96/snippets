@@ -1,6 +1,6 @@
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC50rvJls7Z4y82GhF8vqUKXvP6uffT9xL0qjCYFSNM8IpOpBiBuci7S+lFhovooiGtKsT+uY1W1q0KEitqlcnMldQPB3eVwvFpjs/Mxs5AKUvpvw3HpsrKRYJSsWywhQlLzMMWtBexvosnmhLcsLJzaRPbsZEyXH+qX4SWjNMtmxNa3nLDfCZcS1NO83nLlxXMxwNO1Kb3+bo2lROO0dmvK0gvOK0DQBkbhAlOg1VHoDjdmbDujrV/5mpcwgnLVXwC12DXzh6dgKmkakWdjyqmsuKkc9tLipYMS9UwqJ/PsuFh3+BIcFnsmn/I3HktJADTDhwGYOSDIuoweurB/wjH sidharthvinod@Sidharths-Air.Home" >> ~/.ssh/authorized_keys
 sudo yum groupinstall -y "Development Tools"
-sudo yum install -y wget nano git python-pip python-devel postgresql-server postgresql-devel postgresql-contrib gcc nginx zsh
+sudo yum install -y wget nano git python-pip python-devel postgresql-server postgresql-devel postgresql-contrib gcc nginx zsh screen
 sudo usermod -a -G ec2-user nginx
 chmod 710 /home/ec2-user
 wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm
@@ -14,6 +14,7 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 echo "export WORKON_HOME=~/.virtualenvs" >> ~/.zshrc
 echo ". /usr/bin/virtualenvwrapper.sh" >> ~/.zshrc
 echo "alias pm='python manage.py'" >> ~/.zshrc
+echo "defscrollback 5000\ntermcapinfo xterm* ti@:te@" > ~/.screenrc
 source ~/.zshrc
 ssh-keygen
 
