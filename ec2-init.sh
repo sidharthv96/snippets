@@ -16,6 +16,17 @@ echo ". /usr/bin/virtualenvwrapper.sh" >> ~/.zshrc
 echo "alias pm='python manage.py'" >> ~/.zshrc
 source ~/.zshrc
 ssh-keygen
+
+#SWAP of 2GB
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=2097152
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+swapon -s
+sudo su
+echo "/swapfile   swap    swap    sw  0   0">> /etc/fstab
+
+
 mkvirtualenv taxi
 pip install django gunicorn psycopg2
 
