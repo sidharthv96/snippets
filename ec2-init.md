@@ -21,13 +21,11 @@
     ./configure --add-module=$HOME/ngx_pagespeed-${NPS_VERSION}-stable --user=nobody --group=nobody --pid-path=/var/run/nginx.pid ${PS_NGX_EXTRA_FLAGS}
     sudo make
     sudo make install
-    sudo ln -s /usr/local/nginx/conf/ /etc/nginx
+    sudo ln -s /usr/local/nginx/conf/* /etc/nginx
     sudo ln -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
 
  
  Add content from https://www.nginx.com/resources/wiki/start/topics/examples/redhatnginxinit/ to `/etc/init.d/nginx`
- Change `/etc/nginx/nginx.conf` to `/etc/nginx/conf/nginx.conf`
-
 
     sudo nano /etc/init.d/nginx
     sudo chmod +x /etc/init.d/nginx
@@ -35,7 +33,7 @@
     sudo service nginx start
     sudo mkdir -p /var/ngx_pagespeed_cache
     sudo chown -R nobody:nobody /var/ngx_pagespeed_cache
-    sudo nano /etc/nginx/conf/nginx.conf
+    sudo nano /etc/nginx/nginx.conf
 
  Add the following lines
  
@@ -103,7 +101,8 @@
     sudo chown -R nobody:nobody wordpress
     sudo chmod -R 755 wordpress
     sudo mysql_secure_installation
-    mysql -u root -p
+    mysql -u root -p        
+    
 
  #### Creating Databases
 
@@ -139,5 +138,9 @@
                     include fastcgi_params;
                             }
     }
+    
 
-`systemctl restart nginx `
+Replace `apache` to `nobody`
+    sudo nano /etc/php-fpm.d/www.conf
+    
+    systemctl restart nginx
