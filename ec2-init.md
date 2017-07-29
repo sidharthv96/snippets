@@ -26,8 +26,8 @@ sudo ln -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
 
 sudo nano /etc/init.d/nginx
 sudo chmod +x /etc/init.d/nginx
-sudo service nginx start
 sudo systemctl enable nginx
+sudo service nginx start
 sudo mkdir -p /var/ngx_pagespeed_cache
 sudo chown -R nobody:nobody /var/ngx_pagespeed_cache
 sudo nano /etc/nginx/conf/nginx.conf
@@ -90,3 +90,18 @@ sudo su - postgres
 
 #Do inside
 psql
+
+
+# To install wordpress and mysql
+sudo yum install mariadb mariadb-server php php-fpm php-common php-mysql php-gd php-xml php-mbstring php-mcrypt 
+sudo systemctl start mariadb
+sudo systemctl start php-fpm
+cd ~
+wget https://wordpress.org/latest.tar.gz
+tar -xzf latest.tar.gz
+sudo chown -R nobody:nobody wordpress
+sudo chmod -R 755 wordpress
+sudo mysql_secure_installation
+mysql -u root -p
+
+# Creating Databases
