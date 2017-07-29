@@ -6,13 +6,11 @@ chmod 710 /home/ec2-user
 wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm
 sudo rpm -ivh epel-release-7-9.noarch.rpm
 rm epel-release-7-9.noarch.rpm
-sudo pip install --upgrade pip
-sudo pip install virtualenv virtualenvwrapper
-mkdir ~/.virtualenvs
+curl -sL https://raw.githubusercontent.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | $SHELL
 chsh -s /bin/zsh ec2-user
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-echo "export WORKON_HOME=~/.virtualenvs" >> ~/.zshrc
-echo ". /usr/bin/virtualenvwrapper.sh" >> ~/.zshrc
+echo "export PROJECT_HOME=~/" >> ~/.zshrc
+echo "source ~/.venvburrito/startup.sh" >> ~/.zshrc
 echo "alias pm='python manage.py'" >> ~/.zshrc
 echo "defscrollback 5000\ntermcapinfo xterm* ti@:te@" > ~/.screenrc
 source ~/.zshrc
