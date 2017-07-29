@@ -141,6 +141,7 @@
     
 
 Replace `apache` to `nobody`
+    
     sudo nano /etc/php-fpm.d/www.conf
     
     systemctl restart nginx
