@@ -4,7 +4,7 @@
 
     sudo yum groupinstall -y "Development Tools"
     
-    sudo yum install -y wget nano git gcc-c++ pcre-devel zlib-devel mysql-devel libffi-devel make unzip python-pip python-devel postgresql-server postgresql-devel postgresql-contrib zsh screen
+    sudo yum install -y wget nano git gcc-c++ pcre-devel zlib-devel mysql-devel libcurl-devel libffi-devel make unzip python-pip python-devel postgresql-server postgresql-devel postgresql-contrib zsh screen
 
 ## NGINX and Pagespeed
     NPS_VERSION=1.12.34.2
