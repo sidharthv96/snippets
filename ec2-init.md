@@ -146,3 +146,7 @@ Replace `apache` to `nobody`
     sudo nano /etc/php-fpm.d/www.conf
     
     systemctl restart nginx
+
+## Install `fail2ban`
+
+https://linode.com/docs/security/using-fail2ban-for-security/
