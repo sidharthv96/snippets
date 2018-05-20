@@ -18,8 +18,8 @@ update_config=1
 country=IN
 
 network={
-    ssid="Hacker"
-    psk="password"
+    ssid=\"Hacker\"
+    psk=\"password\"
     key_mgmt=WPA-PSK
 }" > /Volumes/boot/wpa_supplicant.conf
 ```
