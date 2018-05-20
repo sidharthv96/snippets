@@ -1,5 +1,11 @@
 # Collection of frequently used snippets
 
+## Install Fish
+```
+apt get install fish -y
+curl -L https://get.oh-my.fish | fish
+```
+
 ## Speed Test
 
 `curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -`
